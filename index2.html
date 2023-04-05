@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="nav-links">
+          <a href="#main">Main Game</a>
+          <a href="#about_us">About Us</a>
+        </div>
+      </nav>
+      <h1 id="main">Game</h1>
+      <p>Click the tofu to earn money!</p>
+      <button id="tofu"><img src="assets/Tofu.jpg" width="35%"></button>
+      <p id="money">Money: $0</p>
+      <p id="auto-clickers">Auto-Clickers : 0</p>
+      <button id="buy-auto-clicker">Auto-Clickers ($10)</button>
+      <p id="harga-tahu">Harga Tahu: $1</p>
+      <button id="upgrade-harga-tahu">Upgrade Harga Tahu ($10)</button>
+      <br>
+      <br>
+      <br>
+      <h1 id="about_us">About Us</h1>
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-5 g-3">
+        <div class="col">
+          <div class="card shadow-sm" style="max-width: 400px;">
+            <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+              <image href="assets/Foto Mark.jpg" width="100%" height="100%" />
+            </svg>
+            <div class="card-body">
+              <h5><b>Mark Vincent E By</b></h5>
+              <p class="card-text">Hallo, nama saya Mark Vincent Emmanuel By. Saya lahir di Jakarta pada tanggal 23 Januari 2004. Saat ini saya 
+                sedang berkuiah di UMN. saya sangat senang berkuliah di UMN karena asik dan menyenangkan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm" style="max-width: 400px;">
+            <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+              <image href="assets/Tofu.jpg" width="100%" height="100%" />
+            </svg>
+            <div class="card-body">
+              <h5><b>Bryan Jonathan</b></h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm" style="max-width: 400px;">
+            <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+              <image href="assets/Foto Dylan.jpg" width="100%" height="100%" />
+            </svg>
+            <div class="card-body">
+              <h5><b>Dylan William</b></h5>
+              <p class="card-text">Halo, nama saya Dylan William. Saya lahir di Jakarta pada tanggal 19 November 2004. Saat ini saya sedang berkuliah di UMN dengan jurusan Informatika, karena saya ingin mempelajari cara membuat software.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm" style="max-width: 400px;">
+            <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+              <image href="assets/Tofu.jpg" width="100%" height="100%" />
+            </svg>
+            <div class="card-body">
+              <h5><b>Matthew Nikolaus</b></h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm" style="max-width: 400px;">
+            <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+              <image href="assets/Foto David.jpg" width="100%" height="100%" />
+            </svg>
+            <div class="card-body">
+              <h5><b>David Moses M K</b></h5>
+              <p class="card-text">Hi, nama saya David Moses Mantiri Kalesaran. Lahir pada 20 Juli 2004, Jakarta. Saat ini saya sedang berkuliah di Universitas Multimedia Nusantara. Saya berharap kita bisa lulus kuliah dan mendapatkan pekerjaan yang layak (dan menjadi kaya ^w^).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3>References</h3>
+      <ul>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+      </ul>
+    </div>
+    <script>
+      // initialize variables
+      var money = 0;
+      var clickValue = 1;
+      var autoClickers = 0;
+      var autoClickerValue = 10;
+      var autoClickerInterval = 1000; // set interval to 1 second
+      var hargaTahu = 1;
+      
+      
+      // function to update money
+      function updateMoney() {
+        money += clickValue;
+        document.getElementById("money").innerHTML = "Money: $" + money;
+      }
+      
+      // function to buy auto-clicker
+      function buyAutoClicker() {
+        if (money >= autoClickerValue) {
+            money -= autoClickerValue;
+            autoClickers++;
+            clickValue++;
+            autoClickerValue += 10;
+            autoClickerInterval -= 50; // decrease interval by 50ms to increase auto-clicker speed
+            document.getElementById("money").innerHTML = "Money: $" + money;
+            document.getElementById("auto-clickers").innerHTML = "Auto-Clickers: " + autoClickers;
+            document.getElementById("buy-auto-clicker").innerHTML = "Buy Auto-Clicker ($" + autoClickerValue + ")";
+        } else {
+            alert("You don't have enough money to buy an auto-clicker!");
+        }
+      }
+      
+      // function to update money automatically
+      function autoUpdateMoney() {
+        money += autoClickers * clickValue;
+        document.getElementById("money").innerHTML = "Money: $" + money;
+      }
+      
+      // event listener for clicking tofu
+      document.getElementById("tofu").addEventListener("click", updateMoney);
+      
+      // event listener for buying auto-clicker
+      document.getElementById("buy-auto-clicker").addEventListener("click", buyAutoClicker);
+      
+      // set interval to update money automatically
+      setInterval(autoUpdateMoney, autoClickerInterval);
+      
+      function upgradeHargaTahu() {
+      if (money >= 10) {
+        money -= 10;
+        hargaTahu *= 2; // upgrade harga tahu menjadi dua kali lipat
+        document.getElementById("money").innerHTML = "Money: $" + money;
+        document.getElementById("harga-tahu").innerHTML = "Harga Tahu: $" + hargaTahu;
+        document.getElementById("upgrade-harga-tahu").innerHTML = "Upgrade Harga Tahu ($" + (hargaTahu * 5) + ")";
+      } else {
+        alert("You don't have enough money to upgrade the tofu price!");
+      }
+      }
+      
+      document.getElementById("upgrade-harga-tahu").addEventListener("click", upgradeHargaTahu);
+      
+      function updateMoney() {
+        money += clickValue * hargaTahu; // perolehan uang diperoleh dari harga tahu yang sudah diupgrade
+        document.getElementById("money").innerHTML = "Money: $" + money;
+      }
+      
+      // function autoUpdateMoney() {
+      //     money += autoClickers * clickValue * hargaTahu; // perolehan uang diperoleh dari harga tahu yang sudah diupgrade
+      //     document.getElementById("money").innerHTML = "Money: $" + money;
+      // }
+      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+/* small screens */
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 24px;
+	}
+	
+	#tofu img {
+		width: 100%;
+	}
+}
+
+/* medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+	h1 {
+		font-size: 36px;
+	}
+	
+	#tofu img {
+		width: 50%;
+	}
+	
+	button {
+		font-size: 16px;
+		padding: 10px;
+	}
+}
+
+/* large screens */
+@media only screen and (min-width: 1025px) {
+	h1 {
+		font-size: 48px;
+	}
+	
+	#tofu img {
+		width: 35%;
+	}
+	
+	button {
+		font-size: 18px;
+		padding: 12px;
+	}
+}
+nav {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px;
+	background-color: #f1f1f1;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+#money {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#auto-clickers {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#harga-tahu{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.nav-links a {
+	color: #333;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+	background-color: #333;
+	color: #f1f1f1;
+}
+button {
+	background: linear-gradient(to bottom, #4eb5f1, #3899e6);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 12px;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+	background: linear-gradient(to bottom, #3899e6, #4eb5f1);
+}
+
+#gambar{
+	background-color: #3899e6;
+}
