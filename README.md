@@ -8,5 +8,5 @@ List Anggota Kelompok:
 •	Mark Vincent Emmanuel By - 00000065468  
 •	David Moses Mantiri Kalesaran - 00000067468  
 
-Link Github:
+Link Github: https://github.com/dw-beta/UTS--IF231-ALBL-Intro-to-Internet-Technology
 
