@@ -49,7 +49,7 @@ nav {
 body {
 	color: white;
 	font-family: Arial, sans-serif;
-	background-image: url('background.png');
+	background-image: url('assets/background.png');
 }
 
 #game{

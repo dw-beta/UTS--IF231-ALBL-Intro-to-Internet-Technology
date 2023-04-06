@@ -17,7 +17,7 @@
     <div class="container mt-5 text-white d-flex flex-column align-items-center">
         <h1 class="mt-5">Tofu Clicker!</h1>
         <p>Click the tofu to earn money!</p>
-        <button id="tofu"><img src="tofu.png"></button>
+        <button id="tofu"><img src="assets/tofu.png"></button>
         <p id="money">Money: $0</p>
         <p id="auto-clickers">Auto-Clickers : 0</p>
         <button class="button" id="buy-auto-clicker">Auto-Clickers ($10)</button>
@@ -33,7 +33,7 @@
             <div class="col-lg">
               <div class="card shadow-sm">
                 <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
-                    <image href="Foto Mark.jpg" width="100%" height="100%" />
+                    <image href="assets/Foto Mark.jpg" width="100%" height="100%" />
                 </svg>
                 <div class="card-body">
                   <h5><b>Mark Vincent E By</b></h5>
@@ -47,7 +47,7 @@
             <div class="col-lg">
                 <div class="card shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
-                        <image href="Foto Beje.jpg" width="100%" height="100%" />
+                        <image href="assets/Foto Beje.jpg" width="100%" height="100%" />
                     </svg>
                   <div class="card-body">
                     <h5><b>Bryan Jonathan</b></h5>
@@ -61,7 +61,7 @@
               <div class="col-lg">
                 <div class="card shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
-                        <image href="Foto Dylan.jpg" width="100%" height="100%" />
+                        <image href="assets/Foto Dylan.jpg" width="100%" height="100%" />
                     </svg>
                   <div class="card-body">
                     <h5><b>Dylan William</b></h5>
@@ -73,7 +73,7 @@
               <div class="col-lg">
                 <div class="card shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
-                        <image href="Foto Matthew.jpg" width="100%" height="100%" />
+                        <image href="assets/Foto Matthew.jpg" width="100%" height="100%" />
                     </svg>
                   <div class="card-body">
                     <h5><b>Matthew Nikolaus</b></h5>
@@ -85,7 +85,7 @@
               <div class="col-lg">
                 <div class="card shadow-sm">
                     <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
-                        <image href="Foto David.jpg" width="100%" height="100%" />
+                        <image href="assets/Foto David.jpg" width="100%" height="100%" />
                     </svg>
                   <div class="card-body">
                     <h5><b>David Moses M K</b></h5>
@@ -167,11 +167,11 @@ function upgradeHargaTahu() {
 document.getElementById("upgrade-harga-tahu").addEventListener("click", upgradeHargaTahu);
 
 function updateMoney() {
-    tofu.setAttribute("src", "happytofu.png");
+    tofu.setAttribute("src", "assets/happytofu.png");
     money += clickValue * hargaTahu;
     document.getElementById("money").innerHTML = "Money: $" + money;
     setTimeout(function() {
-        tofu.setAttribute("src", "tofu.png");
+        tofu.setAttribute("src", "assets/tofu.png");
     }, 500);
 }
 
