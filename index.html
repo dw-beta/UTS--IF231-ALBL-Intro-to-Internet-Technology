@@ -20,9 +20,9 @@
         <button id="tofu"><img src="assets/tofu.png"></button>
         <p id="money">Money: $0</p>
         <p id="auto-clickers">Auto-Clickers : 0</p>
-        <button class="button" id="buy-auto-clicker">Auto-Clickers ($10)</button>
+        <button class="button" id="buy-auto-clicker">Buy Auto-Clicker ($10)</button>
         <p id="harga-tahu" class="mt-3">Harga Tahu: $1</p>
-        <button class="button" id="upgrade-harga-tahu">Upgrade Harga Tahu ($5)</button>
+        <button class="button" id="upgrade-harga-tahu">Upgrade Tofu Price ($50)</button>
         <br><br><br><br><br>
     </div>
     </div>
@@ -99,9 +99,9 @@
     <div class="container text-white">
         <h3>References</h3>
         <ul>
-            <li>Bootstrap. Diambil dari https://getbootstrap.com/</li>
-            <li>Gambar tofu. Diambil dari https://id.depositphotos.com/</li>
-            <li>Gambar latar belakang. Diambil dari https://pixabay.com/</li>
+            <li>Bootstrap. Diambil dari <a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+            <li>Gambar tofu. Diambil dari <a href="https://id.depositphotos.com/">https://id.depositphotos.com/</a></li>
+            <li>Gambar latar belakang. Diambil dari <a href="https://pixabay.com/">https://pixabay.com/</a></li>
         </ul>
     </div>
     </div>
@@ -131,8 +131,7 @@ function buyAutoClicker() {
     if (money >= autoClickerValue) {
         money -= autoClickerValue;
         autoClickers++;
-        clickValue++;
-        autoClickerValue += 10;
+        autoClickerValue *= 10;
         autoClickerInterval -= 50;
         document.getElementById("money").innerHTML = "Money: $" + money;
         document.getElementById("auto-clickers").innerHTML = "Auto-Clickers: " + autoClickers;
@@ -143,7 +142,7 @@ function buyAutoClicker() {
 }
 
 function autoUpdateMoney() {
-    money += autoClickers * clickValue;
+    money += autoClickers * hargaTahu;
     document.getElementById("money").innerHTML = "Money: $" + money;
 }
 
@@ -153,12 +152,12 @@ document.getElementById("buy-auto-clicker").addEventListener("click", buyAutoCli
 setInterval(autoUpdateMoney, autoClickerInterval);
 
 function upgradeHargaTahu() {
-  if (money >= hargaTahu * 5) {
-    money -= hargaTahu * 5;
+  if (money >= hargaTahu * 50) {
+    money -= hargaTahu * 50;
     hargaTahu *= 2;
     document.getElementById("money").innerHTML = "Money: $" + money;
     document.getElementById("harga-tahu").innerHTML = "Harga Tahu: $" + hargaTahu;
-    document.getElementById("upgrade-harga-tahu").innerHTML = "Upgrade Harga Tahu ($" + (hargaTahu * 5) + ")";
+    document.getElementById("upgrade-harga-tahu").innerHTML = "Upgrade Tofu Price ($" + (hargaTahu * 50) + ")";
   } else {
     alert("You don't have enough money to upgrade the tofu price!");
   }

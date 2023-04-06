@@ -10,3 +10,4 @@ List Anggota Kelompok:
 
 Link Github: https://github.com/dw-beta/UTS--IF231-ALBL-Intro-to-Internet-Technology
 
+Selamat datang di game Tofu Clicker! Target game ini adalah untuk mendapatkan uang sebanyak mungkin. Pertama, anda dapat mendapatkan uang dengan mengklik tahu. Untuk mendapatkan keuntungan lebih banyak, anda dapat menginvestasikan uang anda dengan membeli auto-clicker dan/atau menaikkan harga tahu.
