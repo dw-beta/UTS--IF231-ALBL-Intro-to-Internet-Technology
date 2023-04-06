@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+        <nav>
+            <div class="nav-links">
+                <a onclick="displayGame()" href="#game">Main Game</a>
+                <a onclick="displayAboutUs()" href="#aboutUs">About Us</a>
+            </div>
+        </nav>
+    <div id="game">
+    <div class="container mt-5 text-white d-flex flex-column align-items-center">
+        <h1 class="mt-5">Tofu Clicker!</h1>
+        <p>Click the tofu to earn money!</p>
+        <button id="tofu"><img src="tofu.png"></button>
+        <p id="money">Money: $0</p>
+        <p id="auto-clickers">Auto-Clickers : 0</p>
+        <button class="button" id="buy-auto-clicker">Auto-Clickers ($10)</button>
+        <p id="harga-tahu" class="mt-3">Harga Tahu: $1</p>
+        <button class="button" id="upgrade-harga-tahu">Upgrade Harga Tahu ($5)</button>
+        <br><br><br><br><br>
+    </div>
+    </div>
+    <div id="aboutUs">
+    <div class="container mt-5 text-white d-flex flex-column align-items-center">
+        <h1>About Us</h1>
+        <div class="text-black row row-cols-1 row-cols-lg-5 g-3">
+            <div class="col-lg">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+                    <image href="Foto Mark.jpg" width="100%" height="100%" />
+                </svg>
+                <div class="card-body">
+                  <h5><b>Mark Vincent E By</b></h5>
+                  <p class="card-text">Hallo, nama saya Mark Vincent Emmanuel By. Saya lahir di Jakarta pada tanggal 23 Januari 2004. Saat ini saya 
+                    sedang berkuiah di UMN. saya sangat senang berkuliah di UMN karena asik dan menyenangkan.
+                  </p>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+                        <image href="Foto Beje.jpg" width="100%" height="100%" />
+                    </svg>
+                  <div class="card-body">
+                    <h5><b>Bryan Jonathan</b></h5>
+                    <p class="card-text">Perkenalkan nama saya Bryan Jonathan. Saya lahir pada tanggal 14 September 2004 di Jakarta. Saya memilih jurusan Informatika
+                      karena saya tertarik dalam mempelajari ilmu teknologi masa depan seperti AI, Web4, blockchain, dll.
+                    </p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+                        <image href="Foto Dylan.jpg" width="100%" height="100%" />
+                    </svg>
+                  <div class="card-body">
+                    <h5><b>Dylan William</b></h5>
+                    <p class="card-text">Halo, nama saya Dylan William. Saya lahir di Jakarta pada tanggal 19 November 2004. Saat ini saya sedang berkuliah di UMN dengan jurusan Informatika, karena saya ingin mempelajari cara membuat software.</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+                        <image href="Foto Matthew.jpg" width="100%" height="100%" />
+                    </svg>
+                  <div class="card-body">
+                    <h5><b>Matthew Nikolaus</b></h5>
+                    <p class="card-text">Hai, nama saya Matthew Nikolaus. Saya lahir pada 21 Mei 2004 di Jakarta. Saya seorang mahasiswa jurusan Informatika di Universitas Multimedia Nusantara. Saya berkuliah di UMN karena fasilitasnya yang lengkap dan lokasinya yang dekat dengan rumah.</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="150px" height="150px" id="gambar">
+                        <image href="Foto David.jpg" width="100%" height="100%" />
+                    </svg>
+                  <div class="card-body">
+                    <h5><b>David Moses M K</b></h5>
+                    <p class="card-text">Hi, nama saya David Moses Mantiri Kalesaran. Lahir pada 20 Juli 2004, Jakarta. Saat ini saya sedang berkuliah di Universitas Multimedia Nusantara. Saya berharap kita bisa lulus kuliah dan mendapatkan pekerjaan yang layak (dan menjadi kaya ^w^).</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <br>
+    </div>
+    <div class="container text-white">
+        <h3>References</h3>
+        <ul>
+            <li>Bootstrap. Diambil dari https://getbootstrap.com/</li>
+            <li>Gambar tofu. Diambil dari https://id.depositphotos.com/</li>
+            <li>Gambar latar belakang. Diambil dari https://pixabay.com/</li>
+        </ul>
+    </div>
+    </div>
+
+	<script>
+var game = document.getElementById("game");
+var aboutUs = document.getElementById("aboutUs");
+var tofu = document.getElementById("tofu").firstChild;
+var money = 0;
+var clickValue = 1;
+var autoClickers = 0;
+var autoClickerValue = 10;
+var autoClickerInterval = 1000;
+var hargaTahu = 1;
+
+function displayGame(){
+    game.style.display = "block";
+    aboutUs.style.display = "none";
+}
+
+function displayAboutUs(){
+    game.style.display = "none";
+    aboutUs.style.display = "block";
+}
+
+function buyAutoClicker() {
+    if (money >= autoClickerValue) {
+        money -= autoClickerValue;
+        autoClickers++;
+        clickValue++;
+        autoClickerValue += 10;
+        autoClickerInterval -= 50;
+        document.getElementById("money").innerHTML = "Money: $" + money;
+        document.getElementById("auto-clickers").innerHTML = "Auto-Clickers: " + autoClickers;
+        document.getElementById("buy-auto-clicker").innerHTML = "Buy Auto-Clicker ($" + autoClickerValue + ")";
+    } else {
+        alert("You don't have enough money to buy an auto-clicker!");
+    }
+}
+
+function autoUpdateMoney() {
+    money += autoClickers * clickValue;
+    document.getElementById("money").innerHTML = "Money: $" + money;
+}
+
+document.getElementById("tofu").addEventListener("click", updateMoney);
+document.getElementById("buy-auto-clicker").addEventListener("click", buyAutoClicker);
+
+setInterval(autoUpdateMoney, autoClickerInterval);
+
+function upgradeHargaTahu() {
+  if (money >= hargaTahu * 5) {
+    money -= hargaTahu * 5;
+    hargaTahu *= 2;
+    document.getElementById("money").innerHTML = "Money: $" + money;
+    document.getElementById("harga-tahu").innerHTML = "Harga Tahu: $" + hargaTahu;
+    document.getElementById("upgrade-harga-tahu").innerHTML = "Upgrade Harga Tahu ($" + (hargaTahu * 5) + ")";
+  } else {
+    alert("You don't have enough money to upgrade the tofu price!");
+  }
+}
+
+document.getElementById("upgrade-harga-tahu").addEventListener("click", upgradeHargaTahu);
+
+function updateMoney() {
+    tofu.setAttribute("src", "happytofu.png");
+    money += clickValue * hargaTahu;
+    document.getElementById("money").innerHTML = "Money: $" + money;
+    setTimeout(function() {
+        tofu.setAttribute("src", "tofu.png");
+    }, 500);
+}
+
+	</script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
